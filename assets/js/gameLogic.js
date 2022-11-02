@@ -1,16 +1,19 @@
 const fs = require('fs');
-var deck = require('./deck.json')
+var deckOfCards = require('./deck.json')
 // must perform the rules of a game of blackjack
-
+let deck = deckOfCards.deck
 
 // set the board
     // establish a deck
     let remainingCards = 51
     function deckTester(arr) {
+        console.log(deck.length)
         let indecks = Math.floor(Math.random() * remainingCards)
         remainingCards = remainingCards - 1
-        let card = deck.deck[indecks]
+        let card = deck[indecks]
+        deck.splice(indecks, 1)
         console.log(card)
+        console.log(deck.length)
     }
     console.log(deckTester(deck))
     
