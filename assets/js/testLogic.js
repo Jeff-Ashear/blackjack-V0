@@ -52,29 +52,26 @@ const deckOfCards = [
   "King of Hearts",
   "King of Diamonds",
 ];
-let deck = [];
-let go = false;
 
-$("#startBtn").click(function (arr) {
-  // deck = deckOfCards;
-  $("#cardDrawn").html("Deck Reshuffled");
-  go = true;
+let deck = [];
+let remainingCards = 52
+
+$("#startBtn").click(function (arr, arr) {
   deck = deckOfCards;
-  console.log(deck);
-  gameLoop(deck, go)
+
+  console.log(deck)
+  return deck
 });
 
-function gameLoop(e, deck, bool) {
-  $("#drawBtn").click(function (e, deck) {
-    e.preventDefault();
-    let localDeck = deck
-    console.log(localDeck)
-    // if (go == false) {
-    //    $('#cardDrawn').html('Click Start')
-    // } else {
-    //     $('#cardDrawn').html('clicked')
-    //     // card = deck[Math.floor(Math.random() * deck.length)]
-    //     console.log(deck)
-    // }
-  });
-}
+let cardsDrawn = 0;
+let thisCard = ""
+
+$("#drawBtn").click(function (deck, num, card, num) {
+  console.log(deck)
+  if (cardsDrawn < 6) {
+    cardsDrawn = cardsDrawn + 1
+    let indecks = Math.floor(Math.random() * remainingCards)
+    thisCard = deck[indecks]
+    console.log(deck)
+  }
+});
