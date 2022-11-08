@@ -60,18 +60,21 @@ $("#startBtn").click(function (arr, arr) {
   deck = deckOfCards;
 
   console.log(deck)
-  return deck
+  return gameLogic(deck)
 });
 
 let cardsDrawn = 0;
 let thisCard = ""
 
-$("#drawBtn").click(function (deck, num, card, num) {
-  console.log(deck)
+$("#drawBtn").click(gameLogic(deck))
+
+function gameLogic(deck, num, card, num) {
+  let localDeck = deckOfCards
+  console.log(localDeck)
   if (cardsDrawn < 6) {
     cardsDrawn = cardsDrawn + 1
     let indecks = Math.floor(Math.random() * remainingCards)
     thisCard = deck[indecks]
     console.log(deck)
   }
-});
+}
