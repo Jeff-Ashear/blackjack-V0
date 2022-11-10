@@ -72,11 +72,14 @@ $("#drawBtn").click(function() {
 
 function gameLogic(deck, num, card, num) {
   let localDeck = deckOfCards
+  let dealOrder = "#"
   if (cardsDrawn < 6) {
-    cardsDrawn = cardsDrawn + 1
     let indecks = Math.floor(Math.random() * remainingCards)
     thisCard = localDeck[indecks]
-    $('#cardDrawn').html(thisCard)
+    dealOrder = dealOrder + cardsDrawn
+    console.log(dealOrder) 
+    $(dealOrder).html(thisCard)
     
+    cardsDrawn = cardsDrawn + 1
   }
 }

@@ -18,18 +18,27 @@
 <body>
 
     <div class="container-fluid">
-        <button id="startBtn" class="btn btn-lg btn-primary">Start</button>
+        <div class="row scoreboard">
+            <div class="col-6">
+                <h5 class="score">Player:</h5>
+                <h5 id="playerScore" class="score">0</h5>
+            </div>
+            <div class="col-6">
+                <h5 class="score">Dealer:</h5>
+                <h5 id="dealerScore" class="score">0</h5>
+            </div>
+        </div>
         <div id="dealerField" class="row gameField">
-            <h1 id="1" class="col-4 dealerCards">Click Start</h1>
-            <h1 id="3" class="col-4 dealerCards">Dealer Card</h1>
-            <h1 id="5" class="col-4 dealerCards">Dealer Card</h1>
-        </div>
-
+            <h3 id="1" class="col-4 dealerCards">Dealer Card</h3>
+            <h3 id="3" class="col-4 dealerCards">Dealer Card</h3>
+            <h3 id="5" class="col-4 dealerCards">Dealer Card</h3>
+        </div>      
         <div id="playerField" class="row gameField">
-            <h1 id="0" class="col-4 playerCards">Player Card</h1>
-            <h1 id="2" class="col-4 playerCards">Player Card</h1>
-            <h1 id="4" class="col-4 playerCards">Player Card</h1>
+            <h3 id="0" class="col-4 playerCards">Player Card</h3>
+            <h3 id="2" class="col-4 playerCards">Player Card</h3>
+            <h3 id="4" class="col-4 playerCards">Player Card</h3>
         </div>
+        <button id="startBtn" class="btn btn-lg btn-primary">Start</button>
         <button id="drawBtn" class="btn btn-lg btn-dark">Draw a Card</button>
     </div>
 
