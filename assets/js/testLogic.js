@@ -56,15 +56,26 @@ const deckOfCards = [
 let deck = [];
 let remainingCards = 52
 
-// $("#startBtn").click(function (arr, arr) {
-//   deck = deckOfCards;
+$("#startBtn").click(function (arr, arr) {
+  deck = deckOfCards;
 
-//   console.log(deck)
-//   return gameLogic(deck)
-// });
+  for (let i = 0; i <= 5; ++i) {
+    let thisCard = "#" + i
+    if (i % 2 == 0) {
+      $(thisCard).html('Player Card')
+    } else {
+      $(thisCard).html('Dealer Card')
+    }
+  }
+
+  console.log(deck)
+  return deck
+});
 
 let cardsDrawn = 0;
 let thisCard = ""
+let dealerScore = 0
+let playerScore = 0
 
 $("#drawBtn").click(function() {
   gameLogic(deck)
@@ -78,8 +89,22 @@ function gameLogic(deck, num, card, num) {
     thisCard = localDeck[indecks]
     dealOrder = dealOrder + cardsDrawn
     console.log(dealOrder) 
-    $(dealOrder).html(thisCard)
-    
-    cardsDrawn = cardsDrawn + 1
+    $(dealOrder).html(thisCard)  
+    cardsDrawn++
+
+    let cardValue = 0
+    for (let i = 0; i < deckOfCards.length; ++i) {
+      if (thisCard === deckOfCards[i]) {
+        if (cardsDrawn % 2 == 0) {
+          cardValue = Math.ceil((i + 1) / 4)
+          dealerScore += cardValue
+          $('#dealerScore').html(dealerScore)
+        } else {
+          cardValue = Math.ceil((i + 1) / 4)
+          playerScore += cardValue
+          $('#playerScore').html(playerScore)
+        }
+      }
+    }
   }
 }
