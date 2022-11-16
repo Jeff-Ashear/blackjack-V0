@@ -36,11 +36,11 @@ const deckOfCards = [
   "Nine of Hearts",
   "Nine of Diamonds",
   "Ten of Spades",
-  "Ten of Clubss",
+  "Ten of Clubs",
   "Ten of Hearts",
   "Ten of Diamonds",
   "Jack of Spades",
-  "Jack of Club",
+  "Jack of Clubs",
   "Jack of Hearts",
   "Jack of Diamonds",
   "Queen of Spades",
@@ -67,6 +67,13 @@ $("#startBtn").click(function (arr, arr) {
       $(thisCard).html('Dealer Card')
     }
   }
+
+  playerScore = 0
+  dealerScore = 0
+  cardsDrawn = 0
+
+  $('#playerScore').html(playerScore)
+  $('#dealerScore').html(dealerScore)
 
   console.log(deck)
   return deck
@@ -106,5 +113,7 @@ function gameLogic(deck, num, card, num) {
         }
       }
     }
+  } else if (playerScore > 21) {
+    alert("Bust! You Lose.  Better luck next time.")
   }
 }
