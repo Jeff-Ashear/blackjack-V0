@@ -7,6 +7,9 @@ body {
 .btn {
     margin-top: 10vh;
     margin-bottom: 10vh;
+    /* margin-left: 2%;
+    margin-right: 2%; */
+    /* max-width: 5%; */
 }
 
 .gameField {
