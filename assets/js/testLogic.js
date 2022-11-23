@@ -87,8 +87,9 @@ let playerScore = 0
 $("#drawBtn").click(function() {
   gameLogic(deck)
   // do this next do a set interval function so the user can see shich card is drawn when
-  // setInterval()
-  gameLogic(deck)
+  setTimeout(function() {
+    gameLogic(deck)
+  }, 1500)
 })
 
 function gameLogic(deck, num, card, num) {
