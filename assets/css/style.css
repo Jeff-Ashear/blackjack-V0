@@ -28,6 +28,7 @@ body {
 
 #playerField {
     background-color: green;
+    border-radius: 3px;
 }
 
 .chips {
